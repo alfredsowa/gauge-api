@@ -1,0 +1,53 @@
+[
+    {
+      "currency": "United States Dollar",
+      "code": "USD",
+      "symbol": "$"
+    },
+    {
+      "currency": "Euro",
+      "code": "EUR",
+      "symbol": "€"
+    },
+    {
+      "currency": "British Pound Sterling",
+      "code": "GBP",
+      "symbol": "£"
+    },
+    {
+      "currency": "Japanese Yen",
+      "code": "JPY",
+      "symbol": "¥"
+    },
+    {
+      "currency": "Canadian Dollar",
+      "code": "CAD",
+      "symbol": "CA$"
+    },
+    {
+      "currency": "Australian Dollar",
+      "code": "AUD",
+      "symbol": "A$"
+    },
+    {
+      "currency": "West African CFA franc",
+      "code": "XOF",
+      "symbol": "CFA"
+    },
+    {
+      "currency": "Nigerian Naira",
+      "code": "NGN",
+      "symbol": "₦"
+    },
+    {
+      "currency": "Ghanaian Cedi",
+      "code": "GHS",
+      "symbol": "GH₵"
+    },
+    {
+      "currency": "Guinean Franc",
+      "code": "GNF",
+      "symbol": "FG"
+    }
+  ]
+  
