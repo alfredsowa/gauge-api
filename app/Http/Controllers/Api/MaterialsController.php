@@ -68,9 +68,17 @@ class MaterialsController extends Controller
             $per_page = $request->per_page;
         }
 
-        $page = 1;
-        if(isset($request->page)) {
-            $page = $request->page;
+        if(isset($request->q)) {
+            $search = $request->q;
+            if($request->q !== ""){
+                return MaterialResource::collection(
+                    Material::with('category')
+                    ->where('business_id',$business_id)
+                    ->where('name','like','%'.$search.'%')
+                    ->orderBy('name','asc')
+                    ->paginate($per_page)
+                );
+            }
         }
 
         return MaterialResource::collection(
