@@ -68,24 +68,24 @@ class MaterialsController extends Controller
             $per_page = $request->per_page;
         }
 
+        $query = Material::with('category')
+            ->where('business_id',$business_id)
+            ->orderBy('name','asc');
+
+        if(isset($request->categories)) {
+            $category_ids = explode (",", $request->categories);
+            $query->whereIn('material_category_id',$category_ids);
+        }
+
         if(isset($request->q)) {
             $search = $request->q;
             if($request->q !== ""){
-                return MaterialResource::collection(
-                    Material::with('category')
-                    ->where('business_id',$business_id)
-                    ->where('name','like','%'.$search.'%')
-                    ->orderBy('name','asc')
-                    ->paginate($per_page)
-                );
+                $query->where('name','like','%'.$search.'%');
             }
         }
 
         return MaterialResource::collection(
-            Material::with('category')
-            ->where('business_id',$business_id)
-            ->orderBy('name','asc')
-            ->paginate($per_page)
+            $query->paginate($per_page)
         );
     }
 
